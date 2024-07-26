@@ -9,15 +9,15 @@ namespace Exam02.Answers
     internal class Answer
     {
 
-        public int Id { get; set; }
-        public string? Text { get; set; }
+        public int AnswerId { get; set; }
+        public string? AnswerText { get; set; }
 
 
 
         public Answer(int id, string? text)
         {
-            Id = id;
-            Text = text;
+            AnswerId = id;
+            AnswerText = text;
         }
 
 

@@ -136,8 +136,6 @@ namespace Exam02.Exams
 
             Console.WriteLine($"Your Grade Is {Mark} From {TotalMarks}");
 
-
-
         }
     }
 }

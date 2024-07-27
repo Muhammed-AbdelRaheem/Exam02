@@ -8,43 +8,35 @@ using System.Threading.Tasks;
 
 namespace Exam02.Questions
 {
-    internal abstract class Question:ICloneable, IComparable<Question>
+    public abstract class Question
     {
+    
 
-        public string? HeaderOfTheQuestion { get; set; }
+        public abstract string? HeaderOfTheQuestion { get; }
         public string? BodyOfTheQuestion { get;set; }
         public int Mark {  get; set; }
-        public Answer[]? AnswerList { get; set; } = default;
-        public Answer? RightAnswer { get; set; }
+        public Answer[] AnswerList { get; set; } 
+        public Answer RightAnswer { get; set; }
 
+        public Answer UserAnswer { get; set; }
 
-
-        protected Question(string? Header, string? Body, int mark, Answer[]? answerList, Answer? rightAnswer)
+        public Question()
         {
-            HeaderOfTheQuestion = Header;
-            BodyOfTheQuestion = Body;
-            Mark = mark;
-            AnswerList = answerList;
-            RightAnswer = rightAnswer;
+            RightAnswer = new Answer();
+            UserAnswer = new Answer();
         }
 
 
-        public override string ToString()
-        {
-            return $"{HeaderOfTheQuestion} - {BodyOfTheQuestion}";
-        }
+
+     
 
 
         public abstract void ShowQuestion();
 
-        public object Clone()
-        {
-            return Clone();
-        }
 
-        public int CompareTo(Question? other)
+        public override string ToString()
         {
-            return string.Compare(HeaderOfTheQuestion, other?.HeaderOfTheQuestion);
+            return $"{HeaderOfTheQuestion} \t Marks: {Mark} \n ------------ \n {BodyOfTheQuestion} \n";
         }
     }
 

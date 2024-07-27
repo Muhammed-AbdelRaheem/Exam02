@@ -1,4 +1,5 @@
-﻿using Exam02.Subjects;
+﻿using Exam02.Questions;
+using Exam02.Subjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,23 +8,26 @@ using System.Threading.Tasks;
 
 namespace Exam02.Exams
 {
-    internal abstract class Exam
+    public abstract class Exam
     {
 
-        public DateTime TimeOfExam { get; set; }
-        public int NumberOfQuestions {  get; set; }
-        public Subject? AssociatedSubject { get; set; }
-
-        public Exam(DateTime timeOfExam, int numberOfQuestions, Subject? associatedSubject)
+        public Exam(int timeOfExam, int numberOfQuestions)
         {
             TimeOfExam = timeOfExam;
             NumberOfQuestions = numberOfQuestions;
-            AssociatedSubject = associatedSubject;
         }
 
 
+        public int TimeOfExam { get; set; }
+        public int NumberOfQuestions {  get; set; }
+
+
+        public Question[] ListOfQuestions { get; set; }
 
         public abstract void ShowExam();
+
+        public abstract void CreateQuestion();
+
 
     }
 }

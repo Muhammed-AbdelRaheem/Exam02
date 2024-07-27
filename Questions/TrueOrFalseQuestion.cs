@@ -10,22 +10,58 @@ namespace Exam02.Questions
 {
     internal class TrueOrFalseQuestion : Question
     {
-        public TrueOrFalseQuestion(string? Header, string? Body, int mark, Answer[]? answerList, Answer? rightAnswer) : base(Header, Body, mark, answerList, rightAnswer)
+        public TrueOrFalseQuestion()
         {
+            AnswerList = new Answer[2];
+
+            AnswerList[0] = new Answer(1,"True");
+            AnswerList[1] = new Answer(1, "False");
+
+
         }
+
+        public override string? HeaderOfTheQuestion { get => "True || False Question"; }
 
 
 
         public override void ShowQuestion()
         {
-            Console.WriteLine($"{HeaderOfTheQuestion} - {BodyOfTheQuestion}");
+            // Header
+            Console.WriteLine(HeaderOfTheQuestion);
 
-            foreach (var answer in AnswerList)
+            // Body
+            Console.WriteLine("Please Enter Question Body");
+            BodyOfTheQuestion = Console.ReadLine();
+
+            //Mark
+
+            int Marks;
+
+            do
             {
-                Console.WriteLine($"{answer.AnswerId}: {answer.AnswerText}");
-            }
+                Console.WriteLine("enter marks of question");
 
-            Console.WriteLine($"Correct Answer: {RightAnswer?.AnswerText}");
+
+            } while (!int.TryParse(Console.ReadLine(), out Marks ) || Marks<0);
+
+
+            Mark = Marks;
+
+
+            int rightAnswerID;
+
+            do
+            {
+                Console.WriteLine("Please Enter The Right Answer id (1 For True | 2 For False) :");
+            }
+            while (!int.TryParse(Console.ReadLine(),out rightAnswerID) || rightAnswerID<1 || rightAnswerID>2 );
+
+            RightAnswer.AnswerId = rightAnswerID;
+            RightAnswer.AnswerText = AnswerList[rightAnswerID - 1].AnswerText;
+
+
+            Console.Clear();
+
         }
 
 

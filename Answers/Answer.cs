@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Exam02.Answers
 {
-    internal class Answer
+    public class Answer
     {
 
         public int AnswerId { get; set; }
         public string? AnswerText { get; set; }
 
+        public Answer() { }
 
 
         public Answer(int id, string? text)
@@ -20,7 +21,10 @@ namespace Exam02.Answers
             AnswerText = text;
         }
 
-
+        public override string ToString()
+        {
+            return $"{AnswerId} - {AnswerText}";
+        }
 
     }
 }

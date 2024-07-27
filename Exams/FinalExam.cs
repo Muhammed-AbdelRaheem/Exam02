@@ -134,7 +134,7 @@ namespace Exam02.Exams
                 Console.WriteLine($"Right Answer: {ListOfQuestions[i].RightAnswer.AnswerText}");
             }
 
-            Console.WriteLine($"your grade is {Mark}/{TotalMarks}");
+            Console.WriteLine($"Your Grade Is {Mark} From {TotalMarks}");
 
 
 

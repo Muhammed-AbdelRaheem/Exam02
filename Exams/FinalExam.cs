@@ -69,7 +69,7 @@ namespace Exam02.Exams
             foreach (var Qs in ListOfQuestions)
             {
                 Console.WriteLine(Qs);
-
+                
 
                 for (int i = 0; i < Qs.AnswerList.Length; i++)
                 {
@@ -129,6 +129,7 @@ namespace Exam02.Exams
                     Mark += ListOfQuestions[i].Mark;
                 }
 
+                
                 Console.WriteLine($"Question({i + 1}): {ListOfQuestions[i].BodyOfTheQuestion}");
                 Console.WriteLine($"Your Answer: {ListOfQuestions[i].UserAnswer.AnswerText}");
                 Console.WriteLine($"Right Answer: {ListOfQuestions[i].RightAnswer.AnswerText}");

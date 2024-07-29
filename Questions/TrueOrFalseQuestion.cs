@@ -15,7 +15,7 @@ namespace Exam02.Questions
             AnswerList = new Answer[2];
 
             AnswerList[0] = new Answer(1,"True");
-            AnswerList[1] = new Answer(1, "False");
+            AnswerList[1] = new Answer(2, "False");
 
 
         }

@@ -21,7 +21,9 @@ namespace Exam02.Exams
             {
                 ListOfQuestions[i] = new MCQQuestion();
                 ListOfQuestions[i].ShowQuestion();
+
                 Console.Clear();
+
             }
         }
 

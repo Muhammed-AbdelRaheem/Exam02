@@ -11,15 +11,19 @@ namespace Exam02.Exams
     public abstract class Exam
     {
 
+
+
+        public int TimeOfExam { get; set; }
+        public int NumberOfQuestions {  get; set; }
+
+
+
         public Exam(int timeOfExam, int numberOfQuestions)
         {
             TimeOfExam = timeOfExam;
             NumberOfQuestions = numberOfQuestions;
         }
 
-
-        public int TimeOfExam { get; set; }
-        public int NumberOfQuestions {  get; set; }
 
 
         public Question[] ListOfQuestions { get; set; }
